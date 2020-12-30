@@ -1,16 +1,14 @@
 import React from 'react';
-import Aoux from '../../Houck/Aoux'
-import Year from "../Year/Year";
+import Aux from '../../Houk/Aoux'
 import './Layout.css'
 
 const Layout = (props) =>(
-    <Aoux>
-        <div>Toolbar, Backdroop </div>
+    <Aux>
         <main className = 'Content '>
              {props.children}
 
         </main>
-    </Aoux>
+    </Aux>
 )
 
 export default Layout
