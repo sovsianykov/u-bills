@@ -2,8 +2,40 @@ import React from "react";
 import Aoux from "../../Houk/Aoux";
 
 function InputTemplate(props) {
+           inpinpChangeHandler0=(event) =>{
+             props.setState(
+                 months :
+             )
+           }
+
+
+
   return (
     <Aoux>
+      <tr>
+        <th>{props.inpChangeHandler0}</th>
+        <th>{props.inpChangeHandler1}</th>
+        <th>{props.inpChangeHandler2}</th>
+        <th>{props.inpChangeHandler3}</th>
+        <th>{props.inpChangeHandler4}</th>
+        <th>{props.inpChangeHandler5}</th>
+        <th>{props.inpChangeHandler6}</th>
+        <th>{props.inpChangeHandler7}</th>
+        <th>{props.inpChangeHandler8}</th>
+        <th>{props.inpChangeHandler9}</th>
+        <th>{props.inpChangeHandler10}</th>
+        <th>{props.inpChangeHandler11}</th>
+        <th>{props.inpChangeHandler12}</th>
+
+      </tr>
+      <tr>
+        <td colSpan="13" className="total">
+          total pay for month is
+          {this.props.months[this.props.months.length - 1].totalForMonth}
+        </td>
+      </tr>
+
+
       <tr>
         <th className="monthName">
           <input type="text" onChange={props.chenged0} />
