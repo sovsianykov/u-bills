@@ -10,7 +10,6 @@ class MonthItems extends Component {
           <td>{this.props.months[this.props.months.length - 1].elPay}</td>
           <td>{this.props.months[this.props.months.length - 1].elDebt}</td>
           <td>{this.props.months[this.props.months.length - 1].elDate}</td>
-          <td>{this.props.months[this.props.months.length - 1].elDate}</td>
           <td>{this.props.months[this.props.months.length - 1].elValue}</td>
           <td>{this.props.months[this.props.months.length - 1].watterPay}</td>
           <td>{this.props.months[this.props.months.length - 1].watterDebt}</td>

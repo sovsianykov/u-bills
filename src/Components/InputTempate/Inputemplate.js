@@ -70,7 +70,7 @@ function InputTemplate(props) {
         </td>
       </tr>
       <tr>
-        <td className="total" colSpan="12">
+        <td className="total" colSpan="13">
           total pay for month <input type="text" onChange={props.chenged12} />
         </td>
       </tr>
