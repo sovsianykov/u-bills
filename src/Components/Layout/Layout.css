@@ -1,4 +1,10 @@
 .Content {
     width: 1100px;
+    background: #eaeaea;
+    padding: 20px;
 
+
+}
+h1 {
+    margin-left: 30px;
 }
