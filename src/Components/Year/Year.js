@@ -3,13 +3,17 @@ import Aux from "../../Houk/Aoux";
 import Table from "react-bootstrap/Table";
 import InputTemplate from "../InputTempate/Inputemplate";
 import "./Year.css";
+import Month from "../Month/Month";
+import MonthItem from "../MonthItems/MonthItems";
+
 class Year extends Component {
   state = {
+
     months: [
       {
         id: 0,
         completed: "false",
-        name: "January",
+        name:  'Jan',
         elPay: "0",
         elDebt: "0 ",
         elValue: "0 ",
@@ -24,14 +28,14 @@ class Year extends Component {
         adminDate: "0 ",
         totalForMonth: "0"
 
-      },
-    ],
-  };
+      }
+    ]
+  }
 
   render() {
     return (
       <Aux>
-        <Table bordered hover striped variant="dark" className="Table">
+        <Table  bordered hover striped variant="dark" className="Table">
           <thead>
             <tr>
               <th rowSpan="2" colSpan="1">
@@ -58,10 +62,14 @@ class Year extends Component {
             </tr>
           </thead>
           <tbody>
-          {/*<Month props ={this.state.months} />*/}
+          {/*<Month months ={this.state.months} />*/}
           </tbody>
           <tbody>
-            <InputTemplate props={this.state.months} />
+          {/*<|MonthItem months ={this.state.months} />*/}
+           <MonthItem months={this.state.months} />
+          </tbody>
+          <tbody>
+            <InputTemplate months ={this.state.months} />
           </tbody>
         </Table>
       </Aux>

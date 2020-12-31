@@ -2,31 +2,30 @@ import React from "react";
 import MonthItems from "../MonthItems/MonthItems";
 import Aoux from "../../Houk/Aoux";
 
-
-const Month = (props) => (
-        <Aoux>
-            {props.months[0].map((el,i) => {
-             return   <MonthItems key ={i}
-                                  id ={el.id}
-
-            name = {el.name}
-            elPay: "0",
-            elDebt: "0 ",
-            elValue: "0 ",
-            elDate: "0 ",
-            watterPay: "0",
-            watterDebt: "0 ",
-            watterValue: "0 ",
-            watterDate: "0 ",
-            adminPay: "0",
-            adminDebt: "0 ",
-            hotWatterValue: "0 ",
-            adminDate: "0 ",
-            totalForMonth: "0"
-
-
-             />
-            } )}
-        </Aoux>
-)
-export default Month
+const Month = ({ months }) => (
+  <Aoux>
+    {months.map((el, i) => {
+      return (
+        <MonthItems
+          key={i}
+          id={el.id}
+          name={el.name}
+          elPay={el.elPay}
+          elDebt={el.elDebt}
+          elValue={el.elValue}
+          elDate={el.elDate}
+          watterPay={el.watterPay}
+          watterDebt={el.watterDebt}
+          watterValue={el.watterValue}
+          watterDate={el.watterDate}
+          adminPay={el.adminPay}
+          adminDebt={el.adminDebt}
+          adminDate={el.adminDate}
+          hotWatterValue={el.hotWatterValue}
+          totalForMonth={el.totalForMonth}
+        />
+      );
+    })}
+  </Aoux>
+);
+export default Month;
