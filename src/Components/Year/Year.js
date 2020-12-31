@@ -8,12 +8,11 @@ import MonthItem from "../MonthItems/MonthItems";
 
 class Year extends Component {
   state = {
-
     months: [
       {
         id: 0,
         completed: "false",
-        name:  'Jan',
+        name: "Jan",
         elPay: "0",
         elDebt: "0 ",
         elValue: "0 ",
@@ -26,16 +25,15 @@ class Year extends Component {
         adminDebt: "0 ",
         hotWatterValue: "0 ",
         adminDate: "0 ",
-        totalForMonth: "0"
-
-      }
-    ]
-  }
+        totalForMonth: " 0",
+      },
+    ],
+  };
 
   render() {
     return (
       <Aux>
-        <Table  bordered hover striped variant="dark" className="Table">
+        <Table bordered hover striped variant="dark" className="Table">
           <thead>
             <tr>
               <th rowSpan="2" colSpan="1">
@@ -61,15 +59,13 @@ class Year extends Component {
               <th>value</th>
             </tr>
           </thead>
+          <tbody>{/*<Month months ={this.state.months} />*/}</tbody>
           <tbody>
-          {/*<Month months ={this.state.months} />*/}
+            {/*<|MonthItem months ={this.state.months} />*/}
+            <MonthItem months={this.state.months} />
           </tbody>
           <tbody>
-          {/*<|MonthItem months ={this.state.months} />*/}
-           <MonthItem months={this.state.months} />
-          </tbody>
-          <tbody>
-            <InputTemplate months ={this.state.months} />
+            <InputTemplate months={this.state.months} />
           </tbody>
         </Table>
       </Aux>
