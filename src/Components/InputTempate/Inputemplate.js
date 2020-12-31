@@ -77,7 +77,7 @@ function InputTemplate(props) {
     </Aoux>
   );
 
-  return InputTemplate;
+
 }
 
 export default InputTemplate;
