@@ -26,8 +26,27 @@ class Year extends Component {
         hotWatterValue: "0 ",
         adminDate: "0 ",
         totalForMonth: " 0",
-      },
+      }
     ],
+    current:
+      {
+        id: Date.now(),
+        completed: "false",
+        name: "Jan",
+        elPay: "0",
+        elDebt: "0 ",
+        elValue: "0 ",
+        elDate: "0 ",
+        watterPay: "0",
+        watterDebt: "0 ",
+        watterValue: "0 ",
+        watterDate: "0 ",
+        adminPay: "0",
+        adminDebt: "0 ",
+        hotWatterValue: "0 ",
+        adminDate: "0 ",
+        totalForMonth: " 0",
+      }
   };
 
   render() {
@@ -59,13 +78,17 @@ class Year extends Component {
               <th>value</th>
             </tr>
           </thead>
-          <tbody>{/*<Month months ={this.state.months} />*/}</tbody>
+          <tbody>
+          <Month months ={this.state.months} />
+          </tbody>
           <tbody>
             {/*<|MonthItem months ={this.state.months} />*/}
             <MonthItem months={this.state.months} />
           </tbody>
           <tbody>
-            <InputTemplate months={this.state.months} />
+            <InputTemplate months={this.state.months}
+                           current ={this.state.current}
+            />
           </tbody>
         </Table>
       </Aux>

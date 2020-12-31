@@ -1,39 +1,61 @@
 import React from "react";
 import Aoux from "../../Houk/Aoux";
+import Month from "../Month/Month";
+import MonthItems from "../MonthItems/MonthItems";
 
 function InputTemplate(props) {
-           inpinpChangeHandler0=(event) =>{
-             props.setState(
-                 months :
-             )
+
+
+const inpChangeHandler = (event) => {
+   props.setState ({
+         current:
+           {
+             id: 0,
+             completed: "false",
+             name: "Jan",
+             elPay: event.target.value,
+             elDebt: "0 ",
+             elValue: "0 ",
+             elDate: "0 ",
+             watterPay: "0",
+             watterDebt: "0 ",
+             watterValue: "0 ",
+             watterDate: "0 ",
+             adminPay: "0",
+             adminDebt: "0 ",
+             hotWatterValue: "0 ",
+             adminDate: "0 ",
+             totalForMonth: " 0",
            }
 
+       }
+   )
+  console.log(props.current.elPay)
+ }
 
 
   return (
     <Aoux>
-      <tr>
-        <th>{props.inpChangeHandler0}</th>
-        <th>{props.inpChangeHandler1}</th>
-        <th>{props.inpChangeHandler2}</th>
-        <th>{props.inpChangeHandler3}</th>
-        <th>{props.inpChangeHandler4}</th>
-        <th>{props.inpChangeHandler5}</th>
-        <th>{props.inpChangeHandler6}</th>
-        <th>{props.inpChangeHandler7}</th>
-        <th>{props.inpChangeHandler8}</th>
-        <th>{props.inpChangeHandler9}</th>
-        <th>{props.inpChangeHandler10}</th>
-        <th>{props.inpChangeHandler11}</th>
-        <th>{props.inpChangeHandler12}</th>
 
-      </tr>
-      <tr>
-        <td colSpan="13" className="total">
-          total pay for month is
-          {this.props.months[this.props.months.length - 1].totalForMonth}
-        </td>
-      </tr>
+            <Month
+
+                 // key ={props.state.current.id}
+                changed0={inpChangeHandler}
+                // elPay={el.elPay}
+                // elDebt={el.elDebt}
+                // elValue={el.elValue}
+                // elDate={el.elDate}
+                // watterPay={el.watterPay}
+                // watterDebt={el.watterDebt}
+                // watterValue={el.watterValue}
+                // watterDate={el.watterDate}
+                // adminPay={el.adminPay}
+                // adminDebt={el.adminDebt}
+                // adminDate={el.adminDate}
+                // hotWatterValue={el.hotWatterValue}
+                // totalForMonth={el.totalForMonth}
+            />
+
 
 
       <tr>
