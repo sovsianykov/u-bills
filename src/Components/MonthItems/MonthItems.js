@@ -5,8 +5,8 @@ class MonthItems extends Component {
   render() {
     return (
       <Aoux>
-        <tr>
-          <th>{this.props.months[this.props.months.length - 1].name}</th>
+        <tr className='item'>
+          <th >{this.props.months[this.props.months.length - 1].name}</th>
           <td>{this.props.months[this.props.months.length - 1].elPay}</td>
           <td>{this.props.months[this.props.months.length - 1].elDebt}</td>
           <td>{this.props.months[this.props.months.length - 1].elDate}</td>

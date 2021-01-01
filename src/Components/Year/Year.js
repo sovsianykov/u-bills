@@ -5,6 +5,7 @@ import InputTemplate from "../InputTempate/Inputemplate";
 import "./Year.css";
 import Month from "../Month/Month";
 import MonthItem from "../MonthItems/MonthItems";
+import Button from "react-bootstrap/Button"
 
 class Year extends Component {
   state = {
@@ -28,12 +29,12 @@ class Year extends Component {
         totalForMonth: " 0",
       }
     ],
-    current:
+    current:[
       {
         id: Date.now(),
         completed: "false",
-        name: "Jan",
-        elPay: "0",
+        name: "currJan",
+        elPay: "currPay",
         elDebt: "0 ",
         elValue: "0 ",
         elDate: "0 ",
@@ -47,7 +48,53 @@ class Year extends Component {
         adminDate: "0 ",
         totalForMonth: " 0",
       }
+      ]
   };
+
+
+      inpChangeHandler = (event) => {
+          this.setState({
+                  current: [
+                      {
+                          id: 0,
+                          completed: "false",
+                          name: event.target.value,
+                          elPay: event.target.value,
+                          elDebt: "0 ",
+                          elValue: "0 ",
+                          elDate: "0 ",
+                          watterPay: "0",
+                          watterDebt: "0 ",
+                          watterValue: "0 ",
+                          watterDate: "0 ",
+                          adminPay: "0",
+                          adminDebt: "0 ",
+                          hotWatterValue: "0 ",
+                          adminDate: "0 ",
+                          totalForMonth: " 0",
+                      }
+                  ]
+
+              }
+          )
+
+      }
+    saveHandler = async() => {
+        let inputs = document.querySelectorAll('input')
+        let cell = document.querySelectorAll('tr.currentM td, tr.currentM th')
+        let item = document.querySelectorAll('tr.item td, tr.item th')
+        for ( let j=0; j< 12;j++) {
+            inputs[j].style.color = 'brown'
+            cell[j].textContent = inputs[j].value
+            // item[j].textContent = inputs[j].value
+            console.log(cell[j])
+
+        }
+
+    }
+
+
+
 
   render() {
     return (
@@ -78,19 +125,26 @@ class Year extends Component {
               <th>value</th>
             </tr>
           </thead>
-          <tbody>
-          <Month months ={this.state.months} />
-          </tbody>
+
           <tbody>
             {/*<|MonthItem months ={this.state.months} />*/}
             <MonthItem months={this.state.months} />
           </tbody>
+            <tbody>
+            <Month current ={this.state.current}/>
+            </tbody>
           <tbody>
             <InputTemplate months={this.state.months}
                            current ={this.state.current}
+                           // changed0={this.inpChangeHandler.bind(this)}
+                           //
+                           // changed1={this.inpChangeHandler.bind(this)}
+
             />
           </tbody>
         </Table>
+          <Button id="save" variant='danger' onClick={this.saveHandler.bind(this)}>SAVE AS NEW MONTH</Button>
+
       </Aux>
     );
   }
