@@ -4,7 +4,7 @@ import Table from "react-bootstrap/Table";
 import InputTemplate from "../InputTempate/Inputemplate";
 import "./Year.css";
 import Month from "../Month/Month";
-import MonthItem from "../MonthItems/MonthItems";
+import MonthItems from "../MonthItems/MonthItems";
 import Button from "react-bootstrap/Button"
 
 class Year extends Component {
@@ -127,8 +127,14 @@ class Year extends Component {
           </thead>
 
           <tbody>
-            {/*<|MonthItem months ={this.state.months} />*/}
-            <MonthItem months={this.state.months} />
+          <MonthItems  months={this.state.months}/>
+          {this.state.months.map((month, i) => {
+              return <MonthItems  key={i}
+                                 months = {this.state.months}
+                                 name = {month.name}
+
+                                                />
+          })}
           </tbody>
             <tbody>
             <Month current ={this.state.current}/>
@@ -143,7 +149,8 @@ class Year extends Component {
             />
           </tbody>
         </Table>
-          <Button id="save" variant='danger' onClick={this.saveHandler.bind(this)}>SAVE AS NEW MONTH</Button>
+          <Button id="save" variant='info' onClick={this.saveHandler.bind(this)}>SAVE THE MONTH</Button>
+          {/*<Button id="save" variant='outline-primary' onClick={this.saveforYearHandler.bind(this)}>Complete The Template</Button>*/}
 
       </Aux>
     );
