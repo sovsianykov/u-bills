@@ -102,7 +102,7 @@ class Year extends Component {
               <th colSpan="4">Electricity</th>
               <th colSpan="4">Water</th>
               <th colSpan="4">Head Of House</th>
-              <th rowSpan="2">total month pay</th>
+              <th rowSpan="2">total year pay</th>
             </tr>
 
             <tr>
