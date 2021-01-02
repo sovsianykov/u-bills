@@ -4,7 +4,7 @@ import Aoux from "../../../Houk/Aoux";
 const ArrayOfAllMonths = (props) => (
   <Aoux>
     <tr>
-      <td>{props.name}</td>
+      <th>{props.name}</th>
       <td className='pay'>{props.elPay} </td>
       <td>{props.elDebt}</td>
       <td>{props.elDate}</td>
