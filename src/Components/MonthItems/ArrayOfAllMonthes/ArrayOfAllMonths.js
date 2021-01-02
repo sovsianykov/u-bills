@@ -20,7 +20,7 @@ const ArrayOfAllMonths = (props) => (
 
 
       <td className="total pay" colSpan="1">
-         {props.total}
+         {props.sum}
       </td>
     </tr>
   </Aoux>

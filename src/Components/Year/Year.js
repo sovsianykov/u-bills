@@ -81,7 +81,7 @@ class Year extends Component {
         hotWatterValue: cell[11].textContent,
         adminDate: cell[12].textContent,
         tot: this.total,
-        sum: cell[12].textContent
+        sum: cell[13].textContent
       },
     })
 
