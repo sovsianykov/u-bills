@@ -32,7 +32,7 @@ class Year extends Component {
     current: {
       id: Date.now(),
       completed: "false",
-      name: "0",
+      name: "jan",
       elPay: "0",
       elDebt: "0 ",
       elValue: "0 ",
@@ -52,7 +52,7 @@ class Year extends Component {
   saveHandler = () => {
     let inputs = document.querySelectorAll("input");
     let cell = document.querySelectorAll("tr.currentM td, tr.currentM th");
-    for (let j = 0; j < 13; j++) {
+    for (let j = 0; j < 12; j++) {
       inputs[j].style.color = "brown";
       cell[j].textContent = inputs[j].value;
     }
@@ -65,17 +65,17 @@ class Year extends Component {
         name: cell[0].textContent,
         elPay: cell[1].textContent,
         elDebt: cell[2].textContent,
-        elValue: cell[3].textContent,
-        elDate: cell[4].textContent ,
-        watterPay: cell[5].textContent,
-        watterDebt: cell[6].textContent,
-        watterValue: cell[7].textContent,
-        watterDate: cell[8].textContent,
-        adminPay: cell[9].textContent,
-        adminDebt: cell[10].textContent,
-        hotWatterValue:cell[11].textContent,
-        adminDate: cell[12].textContent,
-        total: '0',
+        elValue: "0 ",
+        elDate: "0 ",
+        watterPay: "0",
+        watterDebt: "0 ",
+        watterValue: "0 ",
+        watterDate: "0 ",
+        adminPay: "0",
+        adminDebt: "0 ",
+        hotWatterValue: "0 ",
+        adminDate: "0 ",
+        total: " 0",
       },
     });
     this.state.months.push(this.state.current);
