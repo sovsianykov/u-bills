@@ -4,17 +4,67 @@ import Table from "react-bootstrap/Table";
 import InputTemplate from "../InputTempate/Inputemplate";
 import "./Year.css";
 import Month from "../Month/Month";
-import MonthItem from "../MonthItems/MonthItems";
+import MonthItems from "../MonthItems/MonthItems";
+import Button from "react-bootstrap/Button";
 
 class Year extends Component {
   state = {
     months: [
-      {
-        id: 0,
+      // {
+      //   id: 0,
+      //   completed: "false",
+      //   name: "Jan",
+      //   elPay: "0",
+      //   elDebt: "0 ",
+      //   elValue: "0 ",
+      //   elDate: "0 ",
+      //   watterPay: "0",
+      //   watterDebt: "0 ",
+      //   watterValue: "0 ",
+      //   watterDate: "0 ",
+      //   adminPay: "0",
+      //   adminDebt: "0 ",
+      //   hotWatterValue: "0 ",
+      //   adminDate: "0 ",
+      //   totalForMonth: " 0",
+      // }
+    ],
+    current: {
+      id: Date.now(),
+      completed: "false",
+      name: "jan",
+      elPay: "0",
+      elDebt: "0 ",
+      elValue: "0 ",
+      elDate: "0 ",
+      watterPay: "0",
+      watterDebt: "0 ",
+      watterValue: "0 ",
+      watterDate: "0 ",
+      adminPay: "0",
+      adminDebt: "0 ",
+      hotWatterValue: "0 ",
+      adminDate: "0 ",
+      totalForMonth: " 0",
+    },
+  };
+
+  saveHandler = () => {
+    let inputs = document.querySelectorAll("input");
+    let cell = document.querySelectorAll("tr.currentM td, tr.currentM th");
+    for (let j = 0; j < 12; j++) {
+      inputs[j].style.color = "brown";
+      cell[j].textContent = inputs[j].value;
+    }
+    console.log(cell);
+
+    this.setState({
+      current: {
+        id: Date.now(),
         completed: "false",
-        name: "Jan",
-        elPay: "0",
-        elDebt: "0 ",
+        name: cell[0].textContent,
+        elPay: cell[1].textContent,
+        elDebt: cell[2].textContent,
         elValue: "0 ",
         elDate: "0 ",
         watterPay: "0",
@@ -25,9 +75,10 @@ class Year extends Component {
         adminDebt: "0 ",
         hotWatterValue: "0 ",
         adminDate: "0 ",
-        totalForMonth: " 0",
+        total: " 0",
       },
-    ],
+    });
+    this.state.months.push(this.state.current);
   };
 
   render() {
@@ -59,15 +110,34 @@ class Year extends Component {
               <th>value</th>
             </tr>
           </thead>
-          <tbody>{/*<Month months ={this.state.months} />*/}</tbody>
+
           <tbody>
-            {/*<|MonthItem months ={this.state.months} />*/}
-            <MonthItem months={this.state.months} />
+            <MonthItems months={this.state.months} />
+            {/*{this.state.months.map((month, i) => {*/}
+            {/*    return <MonthItems  key={i}*/}
+            {/*                       months = {this.state.months}*/}
+            {/*                       name = {month.name}*/}
+
+            {/*                                      />*/}
+            {/*})}*/}
           </tbody>
           <tbody>
-            <InputTemplate months={this.state.months} />
+            <Month current={this.state.current} />
+          </tbody>
+          <tbody>
+            <InputTemplate
+              months={this.state.months}
+              current={this.state.current}
+              // changed0={this.inpChangeHandler.bind(this)}
+              //
+              // changed1={this.inpChangeHandler.bind(this)}
+            />
           </tbody>
         </Table>
+        <Button id="save" variant="info" onClick={this.saveHandler.bind(this)}>
+          SAVE THE MONTH
+        </Button>
+        {/*<Button id="save" variant='outline-primary' onClick={this.saveforYearHandler.bind(this)}>Complete The Template</Button>*/}
       </Aux>
     );
   }
