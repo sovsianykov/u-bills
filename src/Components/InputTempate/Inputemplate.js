@@ -1,7 +1,12 @@
 import React from "react";
 import Aoux from "../../Houk/Aoux";
+import Month from "../Month/Month";
+import MonthItems from "../MonthItems/MonthItems";
 
-function InputTemplate() {
+function InputTemplate(props) {
+
+
+
   return (
     <Aoux>
       <tr>
