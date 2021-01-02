@@ -20,21 +20,29 @@ const  ArrayOfAllMonths = (props)=>(
            </td><td>
             {props.elValue}
 
-        </td><td>
            </td><td>
-               {props.name}
+               {props.watterPay}
            </td><td>
-               {props.name}
+               {props.watterDebt}
            </td><td>
-               {props.name}
+               {props.watterDate}
            </td><td>
-               {props.name}
+               {props.watterValue}
            </td><td>
-               {props.name}
-           </td><td>
-               {props.name}
+               {props.adminPay}
            </td>
-
+            <td>
+               {props.adminDebt}
+           </td><td>
+               {props.hotwatterValue}
+           </td><td>
+               {props.adminDate}
+           </td>
+        </tr>
+        <tr>
+            <td className="total" colSpan="13">
+                total pay for month  {props.total}
+            </td>
         </tr>
     </Aoux>
 

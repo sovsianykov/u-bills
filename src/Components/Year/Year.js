@@ -10,10 +10,30 @@ import Button from "react-bootstrap/Button"
 class Year extends Component {
   state = {
     months: [
+      // {
+      //   id: 0,
+      //   completed: "false",
+      //   name: "Jan",
+      //   elPay: "0",
+      //   elDebt: "0 ",
+      //   elValue: "0 ",
+      //   elDate: "0 ",
+      //   watterPay: "0",
+      //   watterDebt: "0 ",
+      //   watterValue: "0 ",
+      //   watterDate: "0 ",
+      //   adminPay: "0",
+      //   adminDebt: "0 ",
+      //   hotWatterValue: "0 ",
+      //   adminDate: "0 ",
+      //   totalForMonth: " 0",
+      // }
+    ],
+    current:
       {
-        id: 0,
+        id: Date.now(),
         completed: "false",
-        name: "Jan",
+        name: "jan",
         elPay: "0",
         elDebt: "0 ",
         elValue: "0 ",
@@ -28,58 +48,16 @@ class Year extends Component {
         adminDate: "0 ",
         totalForMonth: " 0",
       }
-    ],
-    current:[
-      {
-        id: Date.now(),
-        completed: "false",
-        name: "currJan",
-        elPay: "currPay",
-        elDebt: "0 ",
-        elValue: "0 ",
-        elDate: "0 ",
-        watterPay: "0",
-        watterDebt: "0 ",
-        watterValue: "0 ",
-        watterDate: "0 ",
-        adminPay: "0",
-        adminDebt: "0 ",
-        hotWatterValue: "0 ",
-        adminDate: "0 ",
-        totalForMonth: " 0",
-      }
-      ]
+
   };
 
 
-      inpChangeHandler = (event) => {
-          this.setState({
-                  current: [
-                      {
-                          id: 0,
-                          completed: "false",
-                          name: event.target.value,
-                          elPay: event.target.value,
-                          elDebt: "0 ",
-                          elValue: "0 ",
-                          elDate: "0 ",
-                          watterPay: "0",
-                          watterDebt: "0 ",
-                          watterValue: "0 ",
-                          watterDate: "0 ",
-                          adminPay: "0",
-                          adminDebt: "0 ",
-                          hotWatterValue: "0 ",
-                          adminDate: "0 ",
-                          totalForMonth: " 0",
-                      }
-                  ]
 
-              }
-          )
 
-      }
-    saveHandler = async() => {
+
+
+    saveHandler = () => {
+        let temp = [0,0,0,0,0,0,0,0,0,0,0,0,0]
         let inputs = document.querySelectorAll('input')
         let cell = document.querySelectorAll('tr.currentM td, tr.currentM th')
         let item = document.querySelectorAll('tr.item td, tr.item th')
@@ -87,10 +65,35 @@ class Year extends Component {
             inputs[j].style.color = 'brown'
             cell[j].textContent = inputs[j].value
             // item[j].textContent = inputs[j].value
-            console.log(cell[j])
 
         }
+        console.log(cell)
 
+        this.setState({
+              current:
+                    {
+                        id: Date.now(),
+                        completed: "false",
+                        name: cell[0].textContent,
+                        elPay: cell[1].textContent,
+                        elDebt: cell[2].textContent,
+                        elValue: "0 ",
+                        elDate: "0 ",
+                        watterPay: "0",
+                        watterDebt: "0 ",
+                        watterValue: "0 ",
+                        watterDate: "0 ",
+                        adminPay: "0",
+                        adminDebt: "0 ",
+                        hotWatterValue: "0 ",
+                        adminDate: "0 ",
+                        total: " 0",
+                    }
+
+
+            }
+        )
+      this.state.months.push(this.state.current)
     }
 
 
@@ -127,14 +130,14 @@ class Year extends Component {
           </thead>
 
           <tbody>
-          <MonthItems  months={this.state.months}/>
-          {this.state.months.map((month, i) => {
-              return <MonthItems  key={i}
-                                 months = {this.state.months}
-                                 name = {month.name}
+          <MonthItems months={this.state.months}/>
+          {/*{this.state.months.map((month, i) => {*/}
+          {/*    return <MonthItems  key={i}*/}
+          {/*                       months = {this.state.months}*/}
+          {/*                       name = {month.name}*/}
 
-                                                />
-          })}
+          {/*                                      />*/}
+          {/*})}*/}
           </tbody>
             <tbody>
             <Month current ={this.state.current}/>

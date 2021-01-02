@@ -14,72 +14,72 @@ function InputTemplate(props) {
 
       <tr>
         <th className="monthName">
-          <input type="text" onChange={props.changed0} />
+          <input type="text" />
         </th>
         <td>
           <span>
-            <input type="text" onChange={props.changed1} />
+            <input type="text"  />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" onChange={props.chenged2} />
+            <input type="text"  />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" onChange={props.chenged3} />
+            <input type="text"  />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" onChange={props.chenged4} />
+            <input type="text"  />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" onChange={props.chenged5} />
+            <input type="text"  />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" onChange={props.chenged6} />
+            <input type="text"  />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" onChange={props.chenged7} />
+            <input type="text"  />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" onChange={props.chenged8} />
+            <input type="text" o />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" onChange={props.chenged9} />
+            <input type="text"  />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" onChange={props.chenged10} />
+            <input type="text"  />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" onChange={props.chenged11} />
+            <input type="text"  />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" onChange={props.chenged12} />
+            <input type="text"  />
           </span>
         </td>
       </tr>
       <tr>
         <td className="total" colSpan="13">
-          total pay for month <input type="text" onChange={props.chenged12} />
+          total pay for month <input type="text"  />
         </td>
       </tr>
     </Aoux>
