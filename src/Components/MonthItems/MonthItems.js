@@ -4,8 +4,10 @@ import Aoux from "../../Houk/Aoux";
 const MonthItems = ({ months }) => (
   <Aoux>
     {months.map((month, i) => {
-      return (
-        <ArrayOfAllMonths
+
+
+  return (
+      <ArrayOfAllMonths
           key={i}
           month={month}
           name={month.name}
@@ -21,9 +23,10 @@ const MonthItems = ({ months }) => (
           adminDebt={month.adminDebt}
           hotwatterValue={month.hotWatterValue}
           adminDate={month.adminDate}
-          totalPay={month.total}
-        />
-      );
+          totalPay={month.tot}
+      />
+  );
+
     })}
   </Aoux>
 );

@@ -48,14 +48,16 @@ class Year extends Component {
       total: " ",
     },
   };
-  total = 0;
+
   saveHandler = () => {
+
     let inputs = document.querySelectorAll("input, select  ");
     let cell = document.querySelectorAll("tr.currentM td, tr.currentM th");
     for (let j = 0; j < 13; j++) {
       inputs[j].style.color = "brown";
       cell[j].textContent = inputs[j].value;
     }
+    this.total = 0;
     this.total +=
       parseInt(cell[1].textContent) +
       parseInt(cell[5].textContent) +
@@ -64,7 +66,7 @@ class Year extends Component {
     this.setState({
       current: {
         id: Date.now(),
-        completed: "false",
+        completed: "true",
         name: cell[0].textContent,
         elPay: cell[1].textContent,
         elDebt: cell[2].textContent,
@@ -78,9 +80,10 @@ class Year extends Component {
         adminDebt: cell[10].textContent,
         hotWatterValue: cell[11].textContent,
         adminDate: cell[12].textContent,
-        total: this.total,
+        tot: this.total,
+        sum: cell[12].textContent
       },
-    });
+    })
 
     this.state.months.push(this.state.current);
   };
@@ -102,7 +105,7 @@ class Year extends Component {
               <th colSpan="4">Electricity</th>
               <th colSpan="4">Water</th>
               <th colSpan="4">Head Of House</th>
-              <th rowSpan="10">total year pay</th>
+              <th rowSpan="10">total  pay</th>
             </tr>
 
             <tr>
@@ -123,13 +126,6 @@ class Year extends Component {
 
           <tbody className="mainbody">
             <MonthItems months={this.state.months} />
-            {/*{this.state.months.map((month, i) => {*/}
-            {/*    return <MonthItems  key={i}*/}
-            {/*                       months = {this.state.months}*/}
-            {/*                       name = {month.name}*/}
-
-            {/*                                      />*/}
-            {/*})}*/}
           </tbody>
           <tbody>
             <Month current={this.state.current} />
@@ -148,7 +144,7 @@ class Year extends Component {
           SAVE THE MONTH
         </Button>
 
-        {/*<Button id="save" variant='outline-primary' onClick={this.saveforYearHandler.bind(this)}>Complete The Template</Button>*/}
+        {/*<Button id="save" variant='outline-primary' onClick={this.completedHandler.bind(this)}>Complete The Template</Button>*/}
       </Aux>
     );
   }
