@@ -9,16 +9,43 @@ function InputTemplate(props) {
 
   return (
     <Aoux>
-
-
-
       <tr>
         <th className="monthName">
           <input type="text" />
         </th>
         <td>
           <span>
-            <input type="text"  />
+            <input type="text" />
+          </span>
+        </td>
+        <td>
+          <span>
+            <input type="text" />
+          </span>
+        </td>
+        <td>
+          <span>
+            <input type="text" />
+          </span>
+        </td>
+        <td>
+          <span>
+            <input type="text" />
+          </span>
+        </td>
+        <td>
+          <span>
+            <input type="text" />
+          </span>
+        </td>
+        <td>
+          <span>
+            <input type="text" />
+          </span>
+        </td>
+        <td>
+          <span>
+            <input type="text" />
           </span>
         </td>
         <td>
@@ -28,64 +55,32 @@ function InputTemplate(props) {
         </td>
         <td>
           <span>
-            <input type="text"  />
+            <input type="text" />
           </span>
         </td>
         <td>
           <span>
-            <input type="text"  />
+            <input type="text" />
           </span>
         </td>
         <td>
           <span>
-            <input type="text"  />
+            <input type="text" />
           </span>
         </td>
         <td>
           <span>
-            <input type="text"  />
-          </span>
-        </td>
-        <td>
-          <span>
-            <input type="text"  />
-          </span>
-        </td>
-        <td>
-          <span>
-            <input type="text" o />
-          </span>
-        </td>
-        <td>
-          <span>
-            <input type="text"  />
-          </span>
-        </td>
-        <td>
-          <span>
-            <input type="text"  />
-          </span>
-        </td>
-        <td>
-          <span>
-            <input type="text"  />
-          </span>
-        </td>
-        <td>
-          <span>
-            <input type="text"  />
+            <input type="text" />
           </span>
         </td>
       </tr>
       <tr>
         <td className="total" colSpan="13">
-          total pay for month <input type="text"  />
+          total pay for month <input type="text" />
         </td>
       </tr>
     </Aoux>
   );
-
-
 }
 
 export default InputTemplate;
