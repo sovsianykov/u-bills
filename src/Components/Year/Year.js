@@ -32,30 +32,33 @@ class Year extends Component {
     current: {
       id: Date.now(),
       completed: "false",
-      name: "default",
-      elPay: "0",
+      name: "",
+      elPay: "",
       elDebt: " ",
       elValue: " ",
       elDate: "",
-      watterPay: "0",
+      watterPay: "",
       watterDebt: " ",
       watterValue: " ",
       watterDate: " ",
-      adminPay: "0",
+      adminPay: "",
       adminDebt: " ",
       hotWatterValue: " ",
       adminDate: "",
       total: " ",
     },
   };
-  total = 0;
+  control = '0'
   saveHandler = () => {
+
     let inputs = document.querySelectorAll("input, select  ");
     let cell = document.querySelectorAll("tr.currentM td, tr.currentM th");
     for (let j = 0; j < 13; j++) {
-      inputs[j].style.color = "brown";
+      // inputs[j].style.color = "brown";
       cell[j].textContent = inputs[j].value;
     }
+    if (this.control === cell[0].textContent ) {return}
+    this.total = 0;
     this.total +=
       parseInt(cell[1].textContent) +
       parseInt(cell[5].textContent) +
@@ -81,7 +84,7 @@ class Year extends Component {
         total: this.total,
       },
     });
-
+    this.control = cell[0].textContent
     this.state.months.push(this.state.current);
   };
 
@@ -102,7 +105,7 @@ class Year extends Component {
               <th colSpan="4">Electricity</th>
               <th colSpan="4">Water</th>
               <th colSpan="4">Head Of House</th>
-              <th rowSpan="2">total year pay</th>
+              <th rowSpan="2">total month payment</th>
             </tr>
 
             <tr>
@@ -116,20 +119,13 @@ class Year extends Component {
               <th>value</th>
               <th colSpan="1">pay</th>
               <th colSpan="1">debt</th>
-              <th>date</th>
               <th>value</th>
+              <th>date</th>
             </tr>
           </thead>
 
           <tbody className="mainbody">
             <MonthItems months={this.state.months} />
-            {/*{this.state.months.map((month, i) => {*/}
-            {/*    return <MonthItems  key={i}*/}
-            {/*                       months = {this.state.months}*/}
-            {/*                       name = {month.name}*/}
-
-            {/*                                      />*/}
-            {/*})}*/}
           </tbody>
           <tbody>
             <Month current={this.state.current} />
@@ -138,13 +134,10 @@ class Year extends Component {
             <InputTemplate
               months={this.state.months}
               current={this.state.current}
-              // changed0={this.inpChangeHandler.bind(this)}
-              //
-              // changed1={this.inpChangeHandler.bind(this)}
             />
           </tbody>
         </Table>
-        <Button id="save" variant="outline-secondary" onClick={this.saveHandler.bind(this)}>
+        <Button id="save" variant="outline-dark" onClick={this.saveHandler.bind(this)}>
           SAVE THE MONTH
         </Button>
 
