@@ -11,8 +11,8 @@ const MonthItems = ({ months }) => (
           name={month.name}
           elPay={month.elPay}
           elDebt={month.elDebt}
-          elValue={month.elValue}
           elDate={month.elDate}
+          elValue={month.elValue}
           watterPay={month.watterPay}
           watterDebt={month.watterDebt}
           watterDate={month.watterDate}

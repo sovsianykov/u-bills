@@ -6,7 +6,20 @@ function InputTemplate() {
     <Aoux>
       <tr>
         <th className="monthName">
-          <input type="text" />
+          <select name="select">
+          <option value="jnv">jnv</option>
+          <option value="feb" >feb</option>
+          <option value="march">march</option>
+          <option value="apr">apr</option>
+            <option value="may">may</option>
+            <option value="jun" >jun</option>
+            <option value="jul">jul</option>
+            <option value="aou">aou</option>
+            <option value="sep">sep</option>
+            <option value="oct" >oct</option>
+            <option value="nov">nov</option>
+            <option value="dec">dec</option>
+        </select>
         </th>
         <td>
           <span>
@@ -68,12 +81,11 @@ function InputTemplate() {
             <input type="text" />
           </span>
         </td>
-      </tr>
-      <tr>
-        <td className="total" colSpan="13">
-          total pay for month <input type="text" />
+        <td className="total" >
+          <input type="text" />
         </td>
       </tr>
+
     </Aoux>
   );
 }

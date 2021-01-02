@@ -33,6 +33,6 @@ td.total input {
 input {
   width: 50px;
 }
-.no {
-  display: none;
+.pay {
+  color: #e91e05;
 }

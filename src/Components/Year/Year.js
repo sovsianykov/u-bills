@@ -32,32 +32,35 @@ class Year extends Component {
     current: {
       id: Date.now(),
       completed: "false",
-      name: "jan",
+      name: "default",
       elPay: "0",
-      elDebt: "0 ",
-      elValue: "0 ",
-      elDate: "0 ",
+      elDebt: " ",
+      elValue: " ",
+      elDate: "",
       watterPay: "0",
-      watterDebt: "0 ",
-      watterValue: "0 ",
-      watterDate: "0 ",
+      watterDebt: " ",
+      watterValue: " ",
+      watterDate: " ",
       adminPay: "0",
-      adminDebt: "0 ",
-      hotWatterValue: "0 ",
-      adminDate: "0 ",
-      totalForMonth: " 0",
+      adminDebt: " ",
+      hotWatterValue: " ",
+      adminDate: "",
+      total: " ",
     },
   };
-
+  total = 0;
   saveHandler = () => {
-    let inputs = document.querySelectorAll("input");
+    let inputs = document.querySelectorAll("input, select  ");
     let cell = document.querySelectorAll("tr.currentM td, tr.currentM th");
-    for (let j = 0; j < 12; j++) {
+    for (let j = 0; j < 13; j++) {
       inputs[j].style.color = "brown";
       cell[j].textContent = inputs[j].value;
     }
+    this.total +=
+      parseInt(cell[1].textContent) +
+      parseInt(cell[5].textContent) +
+      parseInt(cell[9].textContent);
     console.log(cell);
-
     this.setState({
       current: {
         id: Date.now(),
@@ -65,26 +68,32 @@ class Year extends Component {
         name: cell[0].textContent,
         elPay: cell[1].textContent,
         elDebt: cell[2].textContent,
-        elValue: "0 ",
-        elDate: "0 ",
-        watterPay: "0",
-        watterDebt: "0 ",
-        watterValue: "0 ",
-        watterDate: "0 ",
-        adminPay: "0",
-        adminDebt: "0 ",
-        hotWatterValue: "0 ",
-        adminDate: "0 ",
-        total: " 0",
+        elDate: cell[3].textContent,
+        elValue: cell[4].textContent,
+        watterPay: cell[5].textContent,
+        watterDebt: cell[6].textContent,
+        watterValue: cell[7].textContent,
+        watterDate: cell[8].textContent,
+        adminPay: cell[9].textContent,
+        adminDebt: cell[10].textContent,
+        hotWatterValue: cell[11].textContent,
+        adminDate: cell[12].textContent,
+        total: this.total,
       },
     });
+
     this.state.months.push(this.state.current);
+  };
+
+  saveYear = () => {
+    this.state.months.push(this.state.current);
+    this.state.months.shift();
   };
 
   render() {
     return (
       <Aux>
-        <Table bordered hover striped variant="dark" className="Table">
+        <Table bordered hover striped  className="Table">
           <thead>
             <tr>
               <th rowSpan="2" colSpan="1">
@@ -93,6 +102,7 @@ class Year extends Component {
               <th colSpan="4">Electricity</th>
               <th colSpan="4">Water</th>
               <th colSpan="4">Head Of House</th>
+              <th rowSpan="2">total month pay</th>
             </tr>
 
             <tr>
@@ -111,7 +121,7 @@ class Year extends Component {
             </tr>
           </thead>
 
-          <tbody>
+          <tbody className="mainbody">
             <MonthItems months={this.state.months} />
             {/*{this.state.months.map((month, i) => {*/}
             {/*    return <MonthItems  key={i}*/}
@@ -134,9 +144,10 @@ class Year extends Component {
             />
           </tbody>
         </Table>
-        <Button id="save" variant="info" onClick={this.saveHandler.bind(this)}>
+        <Button id="save" variant="outline-secondary" onClick={this.saveHandler.bind(this)}>
           SAVE THE MONTH
         </Button>
+
         {/*<Button id="save" variant='outline-primary' onClick={this.saveforYearHandler.bind(this)}>Complete The Template</Button>*/}
       </Aux>
     );
