@@ -21,7 +21,7 @@ const MonthItems = ({ months }) => (
           adminDebt={month.adminDebt}
           hotwatterValue={month.hotWatterValue}
           adminDate={month.adminDate}
-          total={month.total}
+          totalPay={month.total}
         />
       );
     })}

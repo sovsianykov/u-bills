@@ -12,7 +12,7 @@ code {
     monospace;
 }
 .Container {
- width: 100%;
+  width: 1100px;
   margin: 20px auto;
 }
 .Table {
@@ -20,17 +20,18 @@ code {
 }
 
 td {
-  width: 70px;
+  width: 50px;
   padding: 10px !important;
 }
-
+td.total {
+  text-align: right;
+}
 td.total input {
   margin-left: 20px;
 }
 
-input  {
-  width: 70px;
-  font-weight: 500;
+input {
+  width: 50px;
 }
 .pay {
   color: #e91e05;
