@@ -5,7 +5,7 @@ import Layout from "./Components/Layout/layout";
 class App extends Component {
   render() {
     return (
-      <Container >
+      <Container fluid={true} >
         <Layout>
           <h1>my U-Bills</h1>
           <Year />

@@ -7,7 +7,7 @@ function InputTemplate() {
       <tr>
         <th className="monthName">
           <select name="select">
-          <option value="jnv">jnv</option>
+          <option value="jan">jan</option>
           <option value="feb" >feb</option>
           <option value="march">march</option>
           <option value="apr">apr</option>
@@ -23,7 +23,7 @@ function InputTemplate() {
         </th>
         <td>
           <span>
-            <input type="text" />
+            <input defaultValue='0' type="text" />
           </span>
         </td>
         <td>
@@ -33,7 +33,7 @@ function InputTemplate() {
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input type="date" />
           </span>
         </td>
         <td>
@@ -43,7 +43,7 @@ function InputTemplate() {
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input defaultValue='0' type="text" />
           </span>
         </td>
         <td>
@@ -53,7 +53,7 @@ function InputTemplate() {
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input type="date" />
           </span>
         </td>
         <td>
@@ -63,7 +63,7 @@ function InputTemplate() {
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input defaultValue='0' type="text" />
           </span>
         </td>
         <td>
@@ -78,11 +78,11 @@ function InputTemplate() {
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input type="date" />
           </span>
         </td>
         <td className="total" >
-          <input type="text" />
+          <input defaultValue='0 uah' type="text" />
         </td>
       </tr>
 
