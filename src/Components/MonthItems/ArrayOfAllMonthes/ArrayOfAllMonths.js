@@ -3,7 +3,7 @@ import React from "react";
 import Aoux from "../../../Houk/Aoux";
 const ArrayOfAllMonths = ( props) => (
   <Aoux>
-    <tr>
+    <tr className='currentM'>
       <td>{props.name}</td>
       <td className='pay'>{props.elPay} </td>
       <td>{props.elDebt}</td>

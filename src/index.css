@@ -19,7 +19,8 @@ code {
   width: 100%;
 }
 
-td {
+
+td , th , select {
   width: 70px;
   padding: 10px !important;
 }
@@ -29,7 +30,7 @@ td.total input {
 }
 
 input  {
-  width: 70px;
+  width: 80%;
   font-weight: 500;
 }
 .pay {
