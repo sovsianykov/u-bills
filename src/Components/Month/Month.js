@@ -6,7 +6,7 @@ const Month = ({ current }) => (
     <tr className="currentM">
       <th className="cell">{current.name} </th>
       <td className="cell pay">{current.elPay}  </td>
-      <td className="cell">{current.elDebt}</td>
+      <td className="cell">{current.elDebt} </td>
       <td className="cell">{current.elDate}</td>
       <td className="cell">{current.elValue}</td>
       <td className="cell pay">{current.watterPay} </td>
