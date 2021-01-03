@@ -17,7 +17,7 @@ const Month = ({ current }) => (
       <td className="cell">{current.adminDebt}</td>
       <td className="cell">{current.hotWatterValue}</td>
       <td className="cell">{current.adminDate}</td>
-      <td className="cell pay">{current.total} </td>
+      <td className="cell pay">{current.total} UAH</td>
     </tr>
   </Aoux>
 );

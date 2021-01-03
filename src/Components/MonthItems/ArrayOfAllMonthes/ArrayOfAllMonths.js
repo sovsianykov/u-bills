@@ -1,7 +1,7 @@
 import React from "react";
 
 import Aoux from "../../../Houk/Aoux";
-const ArrayOfAllMonths = ( props) => (
+const ArrayOfAllMonths = (props) => (
   <Aoux>
     <tr>
       <th>{props.name}</th>
