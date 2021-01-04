@@ -73,24 +73,24 @@ class Year extends Component {
       parseInt(cell[9].textContent);
 
     this.setState({
-      // current: {
-      //   id: Date.now(),
-      //   completed: "true",
-      //   name: cell[0].textContent,
-      //   elPay: cell[1].textContent,
-      //   elDebt: cell[2].textContent,
-      //   elDate: cell[3].textContent,
-      //   elValue: cell[4].textContent,
-      //   watterPay: cell[5].textContent,
-      //   watterDebt: cell[6].textContent,
-      //   watterValue: cell[7].textContent,
-      //   watterDate: cell[8].textContent,
-      //   adminPay: cell[9].textContent,
-      //   adminDebt: cell[10].textContent,
-      //   hotWatterValue: cell[11].textContent,
-      //   adminDate: cell[12].textContent,
-      //   total: this.total,
-      // },
+      current: {
+        id: Date.now(),
+        completed: "true",
+        name: cell[0].textContent,
+        elPay: cell[1].textContent,
+        elDebt: cell[2].textContent,
+        elDate: cell[3].textContent,
+        elValue: cell[4].textContent,
+        watterPay: cell[5].textContent,
+        watterDebt: cell[6].textContent,
+        watterValue: cell[7].textContent,
+        watterDate: cell[8].textContent,
+        adminPay: cell[9].textContent,
+        adminDebt: cell[10].textContent,
+        hotWatterValue: cell[11].textContent,
+        adminDate: cell[12].textContent,
+        total: this.total,
+      },
     });
 
     this.control = cell[0].textContent;
@@ -122,7 +122,7 @@ class Year extends Component {
             hotWatterValue: this.userData.hotWatterValue,
             adminDate: this.userData.adminDate,
             total: this.userData.total,
-          }
+          },
         ],
         current: {
           id: this.userData.id,
@@ -182,7 +182,7 @@ class Year extends Component {
              adminDebt: " ",
              hotWatterValue: " ",
              adminDate: "",
-             total: " "
+             total: " ",
            }
          }
      )
