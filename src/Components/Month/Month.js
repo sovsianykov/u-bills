@@ -4,7 +4,7 @@ import Aoux from "../../Houk/Aoux";
 const Month = ({ current }) => (
   <Aoux>
     <tr className="currentM">
-      <th className="cell">{current.name} </th>
+      <th className="cell">{current.name}  </th>
       <td className="cell pay">{current.elPay}  </td>
       <td className="cell">{current.elDebt} </td>
       <td className="cell">{current.elDate}</td>
