@@ -7,7 +7,7 @@ function InputTemplate() {
       <tr>
         <th className="monthName">
           <select name="select">
-          <option value="jnv">jnv</option>
+          <option value="jnv" defaultValue='jnv'>jnv</option>
           <option value="feb" >feb</option>
           <option value="march">march</option>
           <option value="apr">apr</option>
@@ -23,66 +23,66 @@ function InputTemplate() {
         </th>
         <td>
           <span>
-            <input type="text" />
+            <input type="text" defaultValue= '0' />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input type="text" defaultValue= '0'  />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input type="date" defaultValue ='0'  />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input type="text" defaultValue ='0' />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input type="text" defaultValue ='0' />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input type="text" defaultValue ='0'/>
           </span>
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input type="date" defaultValue ='0' />
           </span>
         </td>
         <td>
           <span>
-            <input type="text"  />
+            <input type="text" defaultValue ='0'  />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input type="text"  defaultValue ='0' />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input type="text" defaultValue ='0' />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input type="date" />
           </span>
         </td>
         <td>
           <span>
-            <input type="text" />
+            <input type="text" defaultValue ='0' />
           </span>
         </td>
         <td className="total" >
-          <input type="text" />
+          <input type="text" defaultValue ='0' />
         </td>
       </tr>
 
